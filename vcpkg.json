@@ -1,0 +1,7 @@
+{
+  "dependencies": [
+    "boost-tokenizer",
+    "fmt",
+    "boost-spirit"
+  ]
+}
