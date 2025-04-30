@@ -3,9 +3,11 @@
 
 using namespace boost::spirit;
 
-template <typename Iterator> struct OriginGrammar : qi::grammar<Iterator, qi::in_state_skipper<lex::token_def<>>>
+template <typename Iterator>
+struct OriginGrammar : qi::grammar<Iterator, qi::in_state_skipper<lex::token_def<>>>
 {
-    template <typename TokenDef> OriginGrammar(TokenDef const &tok) : OriginGrammar ::base_type(start)
+    template <typename TokenDef>
+    inline OriginGrammar(TokenDef const &tok) : OriginGrammar ::base_type(start)
     {
         start = '{' >> *(tok.identifier >> -ascii::char_(',')) >> '}';
     }

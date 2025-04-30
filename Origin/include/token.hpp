@@ -3,9 +3,10 @@
 
 using namespace boost::spirit;
 
-template <typename Lexer> struct OriginTokens : lex::lexer<Lexer>
+template <typename Lexer>
+struct OriginTokens : lex::lexer<Lexer>
 {
-    OriginTokens()
+    inline OriginTokens()
     {
         identifier = "[a-zA-Z_][a-zA-Z0-9_]*";
         this->self = lex::char_(',') | '{' | '}' | identifier;
